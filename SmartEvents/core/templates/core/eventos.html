@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Events - Eventos</title>
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}" />
+</head>
+
+<body>
+    <header>
+        <div class="header-branding">
+            <img src="{% static 'core/img/logosmartevent.png' %}" alt="Logo" class="logo" id="titulo" />
+            <div class="brand-text">
+                <h1 id="titulo">Smart Events</h1>
+                <p id="subt">Todos tus eventos en un mismo lugar!</p>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="principal.html" id="item">
+                    Smart Events
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}" id="item">Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'eventos' %}" id="item">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'comunidad' %}" id="item">Comunidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}" target="_blank" id="item">Admin</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <div class="container my-5" id="div-id">
+            <h1 class="mb-4">Próximos Eventos:</h1>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'core/img/comite-de-bioseguridad1.webp' %}" class="card-img-top" alt="evento1" />
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title">
+                                Charla informativa “Prevención y seguridad en la investigación
+                                científica”
+                            </h4>
+                            <p class="card-text">
+                                La Universidad Técnica Federico Santa María, a través del
+                                Comité de Bioseguridad de (CBS-USM) les invita cordialmente a
+                                participar de esta charla informativa. La actividad se
+                                realizará en formato virtual orientada a quienes estén involucrados en
+                                proyectos de investigación experimental.
+                                <ul>
+                                    <li> Valor: Gratuito</li>
+                                    <li> Fecha: Martes 9 de septiembre</li>
+                                    <li> Hora: 12:30</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{% static 'core/img/Muestra-costumbrista-SEDE-VINA-DEL-MAR-1.jpg' %}" class="card-img-top"
+                            alt="evento2" />
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title">
+                                Muestra Costumbrista 2025 Sede Viña del Mar
+                            </h4>
+                            <p class="card-text">
+                                La Dirección de Asuntos Estudiantiles, en conjunto con la
+                                Dirección de Gestión y Desarrollo de Personas y el Comité
+                                Paritario de la Sede Viña del Mar, tiene el agrado de invitar
+                                a toda la comunidad universitaria a participar en una nueva
+                                versión de la “Muestra Costumbrista 2025”, que se llevará a
+                                cabo en la Plaza Cívica de la Sede Viña del Mar.
+                                <ul>
+                                    <li> Valor: Gratuito </li>
+                                    <li> Fecha: Martes 9 de septiembre </li>
+                                    <li> Hora: 12:30 hasta las 15:30 </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{% static 'core/img/Feed-Slimming-VALPARAÍSO-2.jpg' %}" class="card-img-top" alt="evento3" />
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title">
+                                Luis Slimming presenta su show en el Teatro Aula Magna USM
+                            </h4>
+                            <p class="card-text">
+                                El destacado comediante nacional Luis Slimming, también
+                                conocido como “Don comedia”, presentará su nuevo show de stand
+                                up en el Teatro Aula Magna USM, Campus Casa Central
+                                Valparaíso.
+                                <br />
+                                Venta de entradas en
+                                <a href="https://www.ticketpro.cl/evento/3902/luis-slimming-don-comedia--valparaiso">
+                                    http://www.ticketpro.cl
+                                </a>
+                                <br />
+                                *Este evento es de carácter externo y es organizado por Bug
+                                Producciones.   
+                                <ul>
+                                    <li> Valor: $17.250 - $40.250</li>
+                                    <li> Fecha: Viernes 12 de septiembre </li>
+                                    <li> Hora: 20:00 </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Smart Events. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="{% static 'core/js/script.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.js' %}"></script>
+</body>
+
+</html>

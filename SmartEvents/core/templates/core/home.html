@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartEvents - Página Principal</title>
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}" />
+</head>
+
+<body>
+    <header>
+        <div class="header-branding">
+            <img src="{% static 'core/img/logosmartevent.png' %}" alt="Logo" class="logo" id="titulo" />
+            <div class="brand-text">
+                <h1 id="titulo">Smart Events</h1>
+                <p id="subt">Todos tus eventos en un mismo lugar!</p>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="principal.html" id="item">
+                    Smart Events
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}" id="item">Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'eventos' %}" id="item">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'comunidad' %}" id="item">Comunidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}" target="_blank" id="item">Admin</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container rounded my-5">
+        <section class="hero my-5">
+            <h2> Charla informativa “Prevención y seguridad en la investigación científica” </h2>
+            <img src="{% static 'core/img/comite-de-bioseguridad1.webp' %}" class="hero-image my-3" alt="imagen evento 1" />
+
+            <h4>Tiempo restante:</h4>
+            <div id="cuenta1" class="event-countdown h2" data-event-date="2025-09-09T12:30:00"></div>
+            <a href="eventos.html" class="btn btn-primary">Ver más información</a>
+        </section>
+
+        <section class="hero my-5">
+            <h2>Muestra Costumbrista 2025 Sede Viña del Mar</h2>
+            <img src="{% static 'core/img/Muestra-costumbrista-SEDE-VINA-DEL-MAR-1.jpg' %}" class="hero-image my-3" alt="imagen evento 2" />
+
+            <h4>Tiempo restante:</h4>
+            <div id="cuenta2" class="event-countdown h2" data-event-date="2025-09-09T12:30:00"></div>
+            <a href="eventos.html" class="btn btn-primary">Ver más información</a>
+        </section>
+
+        <section class="hero my-5">
+            <h2>Luis Slimming presenta su show en el Teatro Aula Magna USM</h2>
+            <img src="{% static 'core/img/Feed-Slimming-VALPARAÍSO-2.jpg' %}" class="hero-image my-3" alt="imagen evento 3" />
+
+            <h4>Tiempo restante:</h4>
+            <div id="cuenta3" class="event-countdown h2" data-event-date="2025-09-12T20:00:00"></div>
+            <a href="eventos.html" class="btn btn-primary">Ver más información</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Smart Events. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="{% static 'core/js/script.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.js' %}"></script>
+</body>
+
+</html>

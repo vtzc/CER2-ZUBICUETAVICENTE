@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+html {
+  background-color: #f2e8cf;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f2e8cf;
+  padding-top: 200px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #f2e8cf;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-branding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 1rem;
+}
+
+.brand-text h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.brand-text p {font-size: 0.9rem;}
+
+.logo {
+  height: 50px;
+  padding-bottom: 1%;
+  padding-right: 1%;
+}
+
+nav {
+  background-color: #013e4b;
+  color: #f2e8cf;
+}
+
+#item {color: #ffffff;}
+
+.navbar {padding: 0.5rem 1rem;}
+
+.navbar a:hover {text-decoration: underline;}
+
+.navbar-toggler-icon {
+  background-color: #f2e8cf;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px solid black;
+}
+
+body {
+  background-color: #f2e8cf;
+  padding-top: 120px;
+}
+
+main .container {
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero {
+  display: block;
+  border-radius: 10px;
+  background-color: #e7d4a5;
+  text-align: center;
+  padding-top: 1vw;
+  padding-bottom: 0.5vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.hero-image {
+  width: 30%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #f2e8cf;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#cuenta1,#cuenta2,#cuenta3 {
+  font-weight: bold;
+  color: #ca6702;
+}
+
+.card {
+  background-color: #f2e8cf;
+  border: none;
+}
+
+.card-body {background-color: #f2e8cf;}
+
+.card-img-top {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background-color: #f2e8cf;
+  padding-top: 10px;
+}
+
+#formulario_comentarios {
+  background-color: #f2e8cf;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+@media (max-width: 425px) {
+  #titulo {
+    font-size: 1.5rem;
+  }
+  #subt {
+    font-size: 0.8rem;
+  }
+  .hero {
+    padding: 1vw 1vw 1vw 1vw;
+  }
+  .hero-image {
+    width: 120%;
+    max-width: 265px;
+    align-self: auto;
+  }
+  main {
+    padding-bottom: 300px;
+  }
+}
+
+footer {
+  background-color: #013e4b;
+  color: #ffffff;
+  text-align: justify;
+  padding: 0.5rem;
+  width: 100%;
+}
