@@ -25,6 +25,10 @@ urlpatterns = [
     path('eventos/', views.eventos, name="eventos"),
     path('comunidad/', views.comunidad, name="comunidad"),
     path('admin/', admin.site.urls),
+
+    path('registro/', views.registro, name='registro'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
 ]
 
 if settings.DEBUG:

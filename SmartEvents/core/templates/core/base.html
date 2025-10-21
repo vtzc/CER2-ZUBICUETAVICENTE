@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}SmartEvents{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}" />
+</head>
+<body>
+    <header>
+        <div class="header-branding">
+            <img src="{% static 'core/img/logosmartevent.png' %}" alt="Logo" class="logo" id="titulo" />
+            <div class="brand-text">
+                <h1 id="titulo">Smart Events</h1>
+                <p id="subt">¡Todos tus eventos en un mismo lugar!</p>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}" id="item">Smart Events</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto"> 
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}" id="item">Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'eventos' %}" id="item">Eventos</a>
+                        </li>
+
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="item">Mis Eventos</a> 
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}" id="item">Cerrar Sesión</a>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-link text-white">¡Hola, {{ user.username }}!</span>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}" id="item">Iniciar Sesión</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'registro' %}" id="item">Registrarse</a>
+                            </li>
+                        {% endif %}
+
+                        {% if user.is_staff %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'admin:index' %}" target="_blank" id="item">Admin</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <p>&copy; 2025 Smart Events. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="{% static 'core/js/bootstrap.js' %}"></script>
+    <script src="{% static 'core/js/script.js' %}"></script>
+</body>
+</html>

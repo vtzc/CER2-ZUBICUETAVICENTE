@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container my-5" style="max-width: 600px;">
+    <h2 class="text-center">Iniciar Sesión</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-3">Ingresar</button>
+    </form>
+</div>
+{% endblock %}
