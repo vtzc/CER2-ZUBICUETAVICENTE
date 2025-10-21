@@ -51,84 +51,27 @@
         <div class="container my-5" id="div-id">
             <h1 class="mb-4">Próximos Eventos:</h1>
             <div class="row">
+                {% for evento in eventos %}
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card h-100">
-                        <img src="{% static 'core/img/comite-de-bioseguridad1.webp' %}" class="card-img-top" alt="evento1" />
+                        {% if evento.imagen %}
+                            <img src="{{ evento.imagen.url }}" class="card-img-top" alt="{{ evento.titulo }}" />
+                        {% endif %}
                         <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">
-                                Charla informativa “Prevención y seguridad en la investigación
-                                científica”
-                            </h4>
+                            <h4 class="card-title">{{ evento.titulo }}</h4>
                             <p class="card-text">
-                                La Universidad Técnica Federico Santa María, a través del
-                                Comité de Bioseguridad de (CBS-USM) les invita cordialmente a
-                                participar de esta charla informativa. La actividad se
-                                realizará en formato virtual orientada a quienes estén involucrados en
-                                proyectos de investigación experimental.
                                 <ul>
-                                    <li> Valor: Gratuito</li>
-                                    <li> Fecha: Martes 9 de septiembre</li>
-                                    <li> Hora: 12:30</li>
+                                    <li><strong>Lugar:</strong> {{ evento.lugar }}</li>
+                                    <li><strong>Fecha:</strong> {{ evento.fecha_hora|date:"d/m/Y" }}</li>
+                                    <li><strong>Hora:</strong> {{ evento.fecha_hora|time:"H:i" }}</li>
+                                    <li><strong>Valor:</strong> ${{ evento.valor|floatformat:0 }}</li>
+                                    <li><strong>Plazas Disponibles:</strong> {{ evento.plazas_disponibles }}</li>
                                 </ul>
                             </p>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <img src="{% static 'core/img/Muestra-costumbrista-SEDE-VINA-DEL-MAR-1.jpg' %}" class="card-img-top"
-                            alt="evento2" />
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">
-                                Muestra Costumbrista 2025 Sede Viña del Mar
-                            </h4>
-                            <p class="card-text">
-                                La Dirección de Asuntos Estudiantiles, en conjunto con la
-                                Dirección de Gestión y Desarrollo de Personas y el Comité
-                                Paritario de la Sede Viña del Mar, tiene el agrado de invitar
-                                a toda la comunidad universitaria a participar en una nueva
-                                versión de la “Muestra Costumbrista 2025”, que se llevará a
-                                cabo en la Plaza Cívica de la Sede Viña del Mar.
-                                <ul>
-                                    <li> Valor: Gratuito </li>
-                                    <li> Fecha: Martes 9 de septiembre </li>
-                                    <li> Hora: 12:30 hasta las 15:30 </li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="{% static 'core/img/Feed-Slimming-VALPARAÍSO-2.jpg' %}" class="card-img-top" alt="evento3" />
-                        <div class="card-body d-flex flex-column">
-                            <h4 class="card-title">
-                                Luis Slimming presenta su show en el Teatro Aula Magna USM
-                            </h4>
-                            <p class="card-text">
-                                El destacado comediante nacional Luis Slimming, también
-                                conocido como “Don comedia”, presentará su nuevo show de stand
-                                up en el Teatro Aula Magna USM, Campus Casa Central
-                                Valparaíso.
-                                <br />
-                                Venta de entradas en
-                                <a href="https://www.ticketpro.cl/evento/3902/luis-slimming-don-comedia--valparaiso">
-                                    http://www.ticketpro.cl
-                                </a>
-                                <br />
-                                *Este evento es de carácter externo y es organizado por Bug
-                                Producciones.   
-                                <ul>
-                                    <li> Valor: $17.250 - $40.250</li>
-                                    <li> Fecha: Viernes 12 de septiembre </li>
-                                    <li> Hora: 20:00 </li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                </div>  
+                {% endfor %}
             </div>
         </div>
     </main>
