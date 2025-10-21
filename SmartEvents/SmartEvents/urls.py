@@ -29,6 +29,10 @@ urlpatterns = [
     path('registro/', views.registro, name='registro'),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
+
+    path('inscribir/<int:evento_id>/', views.inscribir_evento, name='inscribir_evento'),
+    path('mis-eventos/', views.mis_eventos, name='mis_eventos'),
+    path('anular-inscripcion/<int:evento_id>/', views.anular_inscripcion, name='anular_inscripcion'),
 ]
 
 if settings.DEBUG:

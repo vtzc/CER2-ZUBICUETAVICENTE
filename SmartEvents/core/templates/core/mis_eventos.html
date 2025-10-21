@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Mis Eventos - SmartEvents{% endblock %}
+
+{% block content %}
+<main class="container my-5">
+    <h1 class="mb-4">Mis Inscripciones</h1>
+    <div class="row">
+        {% for evento in eventos %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                {% if evento.imagen %}
+                <img src="{{ evento.imagen.url }}" class="card-img-top" alt="{{ evento.titulo }}">
+                {% endif %}
+                <div class="card-body d-flex flex-column">
+                    <h4 class="card-title">{{ evento.titulo }}</h4>
+                    <p><strong>Fecha:</strong> {{ evento.fecha_hora|date:"d/m/Y H:i" }}</p>
+                    <p><strong>Lugar:</strong> {{ evento.lugar }}</p>
+                    <div class="mt-auto">
+                        <a href="{% url 'anular_inscripcion' evento.id %}" class="btn btn-danger">Anular Inscripción</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col">
+            <p>No estás inscrito en ningún evento todavía. ¡Anímate a participar!</p>
+            <a href="{% url 'eventos' %}" class="btn btn-primary">Ver Eventos</a>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}
